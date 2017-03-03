@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body {
+	font-family: 'Quicksand', "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+p {
+	margin: 0 1.5em 10px 1.5em;
+}
+
+.page-header {
+	margin: 40px 1em 20px 1em;
+}
+
+dd {
+	line-height: 1.8;
+}
+
+.dl-horizontal dt {
+	float: left;
+	width: 160px;
+	overflow: hidden;
+	clear: left;
+	text-align: right;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.dl-horizontal dd {
+	margin-left: 180px;
+}
+
+.row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.jumbotron {
+	background-color: white;
+}
+
+hr {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+/*
+ * Masthead
+ */
+
+.masthead {
+	padding: 1.5rem;
+}
+.masthead a {
+	color: #6a6a6a;
+}
+.masthead a:hover {
+	color: #3a3a3a;
+}
+
+/* Masthead (headings and download button) */
+.masthead-title {
+	margin-top: 0;
+	margin-bottom: .75em;
+	font-size: 2em;
+	line-height: 1;
+}
+.masthead-title a {
+	color: #6a6a6a;
+	text-decoration: none;
+}
+
+/* Nav links */
+.masthead-nav {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: .75em;
+	font-size: 1em;
+}
+.nav-item {
+	display: block;
+	margin-top: .75em;
+	margin-bottom: .75em;
+}
+.nav-link {
+	line-height: 1.6;
+}
+.nav-link-active {
+	font-weight: 500;
+	color: #3a3a3a;
+}
+
+/* Dividers */
+.masthead-hr {
+	width: 100%;
+	margin: 1rem 0;
+	border-top-color: #eee;
+	border-bottom: 0;
+}
+
+@media (min-width: 768px) {
+	.masthead {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 16.66666667%;
+		/*max-width: 380px;*/
+		padding: 3rem 2rem;
+	}
+}
+
+
+/*@media (min-width: 768px) and (min-height: 700px) {
+  .masthead {
+    position: fixed;
+  }
+}
+
+@media (min-width: 1170px) {
+  .masthead {
+    width: 25%;
+  }
+}*/
