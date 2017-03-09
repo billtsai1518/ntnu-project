@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('title', '聯絡我們 | ')
 
-@section('body')
+@section('content')
 	<div class="page-header">
 		<h1>聯絡我們</h1>
 	</div>

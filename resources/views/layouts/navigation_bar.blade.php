@@ -4,12 +4,24 @@
 	</h1>
 	<hr class="masthead-hr">
 	<ul class="masthead-nav">
-		<li class="nav-item">
-			<a class="nav-link nav-link" href="login">登入</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link nav-link" href="register">註冊</a>
-		</li>
+		@if (Auth::guest())
+			<li class="nav-item">
+				<a class="nav-link nav-link" href="{{ route('login') }}">登入</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link nav-link" href="{{ route('register') }}">註冊</a>
+			</li>
+		@else
+			<li class="nav-item">
+				<h4>嗨，{{ Auth::user()->name }}</h4>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">登出</a>
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					{{ csrf_field() }}
+				</form>
+			</li>
+		@endif
 	</ul>
 	<hr class="masthead-hr">
 	<ul class="masthead-nav">
