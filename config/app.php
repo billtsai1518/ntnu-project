@@ -176,6 +176,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+		
+		//Laravel Trusted Proxies
+		//https://github.com/fideloper/TrustedProxy
+		Fideloper\Proxy\TrustedProxyServiceProvider::class,
 
     ],
 
