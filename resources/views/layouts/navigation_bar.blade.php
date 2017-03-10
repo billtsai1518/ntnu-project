@@ -26,10 +26,10 @@
 	<hr class="masthead-hr">
 	<ul class="masthead-nav">
 		<li class="nav-item">
-			<a class="nav-link nav-link" href="about">關於</a>
+			<a class="nav-link nav-link" href="{{ url('about') }}">關於</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link nav-link" href="contact">聯絡我們</a>
+			<a class="nav-link nav-link" href="{{ url('contact') }}">聯絡我們</a>
 		</li>
 	</ul>
 	<hr class="masthead-hr visible-xs">
