@@ -6,15 +6,8 @@
 <div class="jumbotron" style="text-align: center;">
 	<h1>ARSort</h1>
 </div>
-<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-		<div class="panel panel-default">
-			<div class="panel-heading">Dashboard</div>
-			<div class="panel-body">
-				You are logged in!
-			</div>
-		</div>
-	</div>
-</div>
+
+<h1>為什麼選擇ARSort？</h1>
+<p>因為你值得。</p>
 
 @endsection
