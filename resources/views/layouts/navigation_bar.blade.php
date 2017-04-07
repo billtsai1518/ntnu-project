@@ -1,6 +1,6 @@
 <div class="masthead">
 	<h1 class="masthead-title">
-		<a href="/">ARSort</a>
+		<a href="/">Puzzort</a>
 	</h1>
 	<hr class="masthead-hr">
 	<ul class="masthead-nav">
