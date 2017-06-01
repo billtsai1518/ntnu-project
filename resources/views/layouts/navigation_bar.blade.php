@@ -31,9 +31,9 @@
 		<li class="nav-item">
 			<a class="nav-link" href="{{ url('about') }}">關於</a>
 		</li>
-		<li class="nav-item">
+		<!--<li class="nav-item">
 			<a class="nav-link" href="{{ url('contact') }}">聯絡我們</a>
-		</li>
+		</li>-->
 	</ul>
 	<hr class="masthead-hr visible-xs">
 </div>
