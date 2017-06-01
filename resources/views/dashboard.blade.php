@@ -6,13 +6,12 @@
 	<div class="page-header">
 		<h1>Dashboard</h1>
 	</div>
-	<p>成功登入啦！</p>
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			<h3 class="panel-title">Panel title</h3>
+			<h3 class="panel-title">您的班級</h3>
 		</div>
 		<div class="panel-body">
-			Panel content
+			<p>某班</p>
 		</div>
 	</div>
 
