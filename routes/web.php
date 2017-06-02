@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 Route::get('dashboard', 'HomeController@index');
 
+Route::get('createclass', 'ClassesController@create');
+Route::post('createclass', 'ClassesController@store');
+
 Route::get('about', function () {
 	return view('about');
 });
