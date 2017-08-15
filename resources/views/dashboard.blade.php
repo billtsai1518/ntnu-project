@@ -18,7 +18,7 @@
 					<p>學生：
 						@foreach ($users as $user)
 							@if ($class->id == $user->class_id && $class->teacher_id != $user->id)
-								{{ $user->name }}&nbsp;
+								<a href="{{ url('user') }}-{{ $user->id }}">{{ $user->name }}</a>&nbsp;
 							@endif
 						@endforeach
 					</p>
