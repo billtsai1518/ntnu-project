@@ -31,4 +31,18 @@ class UserController extends Controller
         $classes = Classes::findOrFail($user->class_id);
         return view('user', ['user' => $user, 'classes' => $classes]);
     }
+
+    public function setting_view()
+    {
+        return view('setting', ['classes' => Classes::all(), 'users' => User::all()]);
+    }
+    
+    public function setting_store(Request $request)
+    {
+        Auth::user()->name = $request->name;
+        Auth::user()->email = $request->email;
+        Auth::user()->save();
+        
+        return redirect()->action('UserController@setting_view');
+    }
 }
