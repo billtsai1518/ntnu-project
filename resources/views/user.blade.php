@@ -18,7 +18,7 @@
                             <dd>{{ $user->name }}</dd>
                             <dt>班級</dt>
                             <dd>{{ $classes->name }}</dd>
-                            <dt>email</dt>
+                            <dt>E-mail</dt>
                             <dd><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></dd>
                         </dl>
                     </div>
