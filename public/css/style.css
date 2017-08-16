@@ -19,6 +19,10 @@ p {
 	margin-right: 1em;
 }
 
+.panel-footer {
+	border-top: 0;
+}
+
 dd {
 	line-height: 1.8;
 }
