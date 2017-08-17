@@ -12,7 +12,7 @@
 		@if (Auth::user()->id == $class->teacher_id)
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<h3 class="panel-title">{{ $class->name }}<span style="float: right;">邀請碼：{{ $class->invite_code }}</span></h3>
+					<h3 class="panel-title">{{ $class->name }}<a href="{{ url('classes') }}-{{ $class->id }}"><span style="float: right;" class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></h3>
 				</div>
 				<div class="panel-body">
 					<p>學生：
@@ -21,6 +21,7 @@
 								<a href="{{ url('user') }}-{{ $user->id }}">{{ $user->name }}</a>&nbsp;
 							@endif
 						@endforeach
+                        <span style="float: right;">邀請碼：{{ $class->invite_code }}</span>
 					</p>
 				</div>
 			</div>

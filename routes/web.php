@@ -25,6 +25,9 @@ Route::post('createclass', 'ClassesController@store');
 Route::get('joinclass', 'ClassesController@join_class');
 Route::post('joinclass', 'ClassesController@join_store');
 
+Route::get('classes-{id}', 'ClassesController@classes_view');
+Route::post('classes-{id}', 'ClassesController@classes_store');
+
 Route::get('user-{id}', 'UserController@user_view');
 
 Route::get('setting', 'UserController@setting_view');

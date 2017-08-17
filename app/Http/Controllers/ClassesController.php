@@ -57,4 +57,20 @@ class ClassesController extends Controller
 		
 		return redirect()->action('HomeController@index');
 	}
+    
+    public function classes_view($id)
+    {
+        $classes = Classes::findOrFail($id);
+        return view('classes', ['classes' => $classes]);
+    }
+    
+    public function classes_store(Request $request, $id)
+    {
+        $classes = Classes::findOrFail($id);
+        $classes->name = $request->name;
+        $classes->invite_code = $request->invite_code;
+        $classes->save();
+
+        return redirect()->action('HomeController@index');
+    }
 }
