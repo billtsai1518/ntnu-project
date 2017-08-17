@@ -43,6 +43,6 @@ class UserController extends Controller
         Auth::user()->email = $request->email;
         Auth::user()->save();
         
-        return redirect()->action('UserController@setting_view');
+        return redirect()->action('HomeController@index');
     }
 }
