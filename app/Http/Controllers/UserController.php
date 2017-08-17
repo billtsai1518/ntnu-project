@@ -25,7 +25,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function view_user($id)
+    public function user_view($id)
     {
         $user = User::findOrFail($id);
         $classes = Classes::findOrFail($user->class_id);
