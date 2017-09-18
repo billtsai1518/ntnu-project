@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/* JSON Web Token */
+Route::post('auth', 'AuthenticateController@authenticate');
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::get('auth', 'AuthenticateController@index');
+});

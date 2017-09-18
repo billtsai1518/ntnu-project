@@ -45,11 +45,3 @@ Route::get('contact', function () {
 
 //Route::get('classes_list', 'DatabaseController@classes_list');
 
-
-/* JSON Web Token */
-Route::group(['prefix' => 'api'], function()
-{
-    Route::post('auth', 'AuthenticateController@authenticate');
-    Route::get('auth', 'AuthenticateController@index');
-});
-

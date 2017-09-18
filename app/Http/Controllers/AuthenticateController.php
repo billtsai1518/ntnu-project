@@ -29,14 +29,9 @@ class AuthenticateController extends Controller
         return response()->json(compact('token'));
     }
     
-    public function __construct()
-    {
-        $this->middleware('jwt.auth', ['except' => ['authenticate']]);
-    }
-    
     public function index()
     {
-        return response()->json(Auth::user()->all());
+        return response()->json(Auth::user());
     }
 
 }
