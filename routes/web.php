@@ -41,3 +41,15 @@ Route::get('contact', function () {
 	return view('contact');
 });
 
+//Route::get('user_list', 'DatabaseController@user_list');
+
+//Route::get('classes_list', 'DatabaseController@classes_list');
+
+
+/* JSON Web Token */
+Route::group(['prefix' => 'api'], function()
+{
+    Route::post('auth', 'AuthenticateController@authenticate');
+    Route::get('auth', 'AuthenticateController@index');
+});
+
