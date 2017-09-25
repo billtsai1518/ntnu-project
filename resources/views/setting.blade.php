@@ -35,6 +35,31 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group{{ $errors->has('student_id') ? ' has-error' : '' }}">
+                            <label for="student_id" class="col-md-4 control-label">學號</label>
+                            <div class="col-md-6">
+                                <input id="student_id" type="text" class="form-control" name="student_id" value="{{ Auth::user()->student_id }}">
+                                @if ($errors->has('student_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('student_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('school') ? ' has-error' : '' }}">
+                            <label for="school" class="col-md-4 control-label">學校</label>
+                            <div class="col-md-6">
+                                <input id="school" type="text" class="form-control" name="school" value="{{ Auth::user()->school }}">
+                                @if ($errors->has('school'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('school') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn" style="color: white; background-color: #D2B4DE; border-color: #D2B4DE;">

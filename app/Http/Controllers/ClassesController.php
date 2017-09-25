@@ -35,29 +35,11 @@ class ClassesController extends Controller
 		$classes = new Classes;
 		$classes->name = $request->name;
 		$classes->teacher_id = Auth::user()->id;
-		$classes->invite_code = $request->invite_code;
 		$classes->save();
 		
 		return redirect()->action('HomeController@index');
 	}
 
-	public function join_class()
-	{
-		return view('joinclass');
-	}
-	
-	public function join_store(Request $request)
-	{
-		$user = new User;
-		$temp = $request->invite_code;
-		$result = DB::table('classes')->select('id')->where('invite_code', '=', $temp)->value('id');
-		//$user->class_id = $result;
-		//$user->save();
-		DB::table('users')->where('id', '=', Auth::user()->id)->update(['class_id' => $result]);
-		
-		return redirect()->action('HomeController@index');
-	}
-    
     public function classes_view($id)
     {
         $classes = Classes::findOrFail($id);
@@ -68,7 +50,6 @@ class ClassesController extends Controller
     {
         $classes = Classes::findOrFail($id);
         $classes->name = $request->name;
-        $classes->invite_code = $request->invite_code;
         $classes->save();
 
         return redirect()->action('HomeController@index');

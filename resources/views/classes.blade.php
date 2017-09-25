@@ -23,18 +23,6 @@
                                 @endif
                             </div>
                         </div>
-                        
-                        <div class="form-group{{ $errors->has('invite_code') ? ' has-error' : '' }}">
-                            <label for="invite_code" class="col-md-4 control-label">邀請碼</label>
-                            <div class="col-md-6">
-                                <input id="invite_code" type="invite_code" class="form-control" name="invite_code" value="{{ $classes->invite_code }}" required>
-                                @if ($errors->has('invite_code'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('invite_code') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-info">

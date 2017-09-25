@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddClassIdToUsersTable extends Migration
+class CreateRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddClassIdToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->integer('class_id')->default(0);
+        Schema::create('records', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('class_id')->nullable();
+            $table->integer('user_id')->nullable();
         });
     }
 
@@ -25,8 +27,6 @@ class AddClassIdToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('class_id');
-        });
+        Schema::dropIfExists('records');
     }
 }

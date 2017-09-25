@@ -15,8 +15,8 @@ class CreatePortfoliosTable extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('array')->nullable();
-            $table->string('correct_or_not')->nullable();
+            $table->text('array')->nullable();
+            $table->text('result')->nullable();
         });
     }
 

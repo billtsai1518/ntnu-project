@@ -15,11 +15,11 @@ class CreateSortDetailsTable extends Migration
     {
         Schema::create('sort_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->integer('student_id')->nullable();
-            $table->string('round_name')->nullable();
+            $table->integer('time')->nullable();
+            $table->integer('record_id')->nullable();
             $table->integer('action_id')->nullable();
-            $table->integer('portfolio')->nullable();
+            $table->integer('portfolio_id')->nullable();
+            $table->integer('pass')->nullable();
         });
     }
 

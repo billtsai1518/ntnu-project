@@ -22,9 +22,6 @@ Route::get('dashboard', 'HomeController@index');
 Route::get('createclass', 'ClassesController@create');
 Route::post('createclass', 'ClassesController@store');
 
-Route::get('joinclass', 'ClassesController@join_class');
-Route::post('joinclass', 'ClassesController@join_store');
-
 Route::get('classes-{id}', 'ClassesController@classes_view');
 Route::post('classes-{id}', 'ClassesController@classes_store');
 
@@ -40,8 +37,4 @@ Route::get('about', function () {
 Route::get('contact', function () {
 	return view('contact');
 });
-
-//Route::get('user_list', 'DatabaseController@user_list');
-
-//Route::get('classes_list', 'DatabaseController@classes_list');
 

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Classes;
 use App\User;
+use App\Record;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard', ['classes' => Classes::all(), 'users' => User::all()]);
+        $classes = Classes::where('teacher_id', Auth::user()->id)->get();
+        return view('dashboard', ['classes' => $classes, 'records' => Record::all() ,'users' => User::all()]);
     }
 }

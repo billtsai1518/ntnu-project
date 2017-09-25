@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classes;
+use App\Record;
 use App\User;
 use DB;
 use Illuminate\Http\Request;
@@ -28,19 +29,22 @@ class UserController extends Controller
     public function user_view($id)
     {
         $user = User::findOrFail($id);
-        $classes = Classes::findOrFail($user->class_id);
-        return view('user', ['user' => $user, 'classes' => $classes]);
+        $records = Record::where('user_id', $id)->get()->unique('class_id');
+        $classes = Classes::all();
+        return view('user', ['user' => $user, 'classes' => $classes, 'records' => $records]);
     }
 
     public function setting_view()
     {
-        return view('setting', ['classes' => Classes::all(), 'users' => User::all()]);
+        return view('setting');
     }
     
     public function setting_store(Request $request)
     {
         Auth::user()->name = $request->name;
         Auth::user()->email = $request->email;
+        Auth::user()->student_id = $request->student_id;
+        Auth::user()->school = $request->school;
         Auth::user()->save();
         
         return redirect()->action('HomeController@index');
