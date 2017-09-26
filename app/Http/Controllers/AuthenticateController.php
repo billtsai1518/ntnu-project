@@ -6,6 +6,8 @@ use App\User;
 use App\Classes;
 use App\Record;
 use App\Action;
+use App\SortDetail;
+use App\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -73,10 +75,34 @@ class AuthenticateController extends Controller
         return response()->json(Action::all());
     }
     
-    public function action_event()
+    public function action_event(Request $request)
     {
-        //
+        $sort_detail = new SortDetail;
+        $sort_detail->time = $request->time;
+        $sort_detail->record_id = $request->record_id;
+        $sort_detail->action_id = $request->action_id;
+        $sort_detail->portfolio_id = $request->portfolio_id;
+        $sort_detail->pass = $request->pass;
+        $sort_detail->save();
+        
+        return response()->json(['detail_id' => $sort_detail->id]);
     }
-
-
+    
+    public function portfolio_event(Request $request)
+    {
+        $portfolio = new Portfolio;
+        $portfolio->array = $request->array;
+        $portfolio->result = $request->result;
+        $portfolio->save();
+        
+        $sort_detail = new SortDetail;
+        $sort_detail->time = $request->time;
+        $sort_detail->record_id = $request->record_id;
+        $sort_detail->action_id = $request->action_id;
+        $sort_detail->portfolio_id = $portfolio->id;
+        $sort_detail->pass = $request->pass;
+        $sort_detail->save();
+        
+        return response()->json(['detail_id' => $sort_detail->id, 'portfolio_id' => $portfolio->id]);
+    }
 }

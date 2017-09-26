@@ -24,4 +24,5 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('student_info', 'AuthenticateController@student_info');
     Route::get('download', 'AuthenticateController@download');
     Route::post('action_event', 'AuthenticateController@action_event');
+    Route::post('portfolio_event', 'AuthenticateController@portfolio_event');
 });
