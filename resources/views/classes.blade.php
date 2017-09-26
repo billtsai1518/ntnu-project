@@ -10,7 +10,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-info">
                 <div class="panel-body" style="padding: 30px;">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('classes') }}-{{ $classes->id }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('classes') }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">班級名稱</label>
@@ -22,6 +22,9 @@
                                     </span>
                                 @endif
                             </div>
+                        </div>
+                        <div class="form-group" style="display: none;">
+                            <input id="class_id" type="hidden" class="form-control" name="class_id" value="{{ $classes->id }}">
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

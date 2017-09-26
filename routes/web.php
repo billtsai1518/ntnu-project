@@ -23,7 +23,7 @@ Route::get('createclass', 'ClassesController@create');
 Route::post('createclass', 'ClassesController@store');
 
 Route::get('classes-{id}', 'ClassesController@classes_view');
-Route::post('classes-{id}', 'ClassesController@classes_store');
+Route::post('classes', 'ClassesController@classes_store');
 
 Route::get('user-{id}', 'UserController@user_view');
 

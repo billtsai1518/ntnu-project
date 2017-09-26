@@ -46,9 +46,9 @@ class ClassesController extends Controller
         return view('classes', ['classes' => $classes]);
     }
     
-    public function classes_store(Request $request, $id)
+    public function classes_store(Request $request)
     {
-        $classes = Classes::findOrFail($id);
+        $classes = Classes::findOrFail($request->class_id);
         $classes->name = $request->name;
         $classes->save();
 
