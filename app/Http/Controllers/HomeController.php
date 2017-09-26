@@ -28,6 +28,6 @@ class HomeController extends Controller
     public function index()
     {
         $classes = Classes::where('teacher_id', Auth::user()->id)->get();
-        return view('dashboard', ['classes' => $classes, 'records' => Record::all() ,'users' => User::all()]);
+        return view('dashboard', ['classes' => $classes, 'records' => Record::all()->unique('user_id') ,'users' => User::all()]);
     }
 }

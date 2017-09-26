@@ -18,7 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 /* JSON Web Token */
-Route::post('auth', 'AuthenticateController@authenticate');
+Route::post('register', 'AuthenticateController@register');
+Route::post('login', 'AuthenticateController@login');
 Route::group(['middleware' => 'jwt.auth'], function () {
-    Route::get('auth', 'AuthenticateController@index');
+    Route::get('student_info', 'AuthenticateController@student_info');
+    Route::get('download', 'AuthenticateController@download');
+    Route::post('action_event', 'AuthenticateController@action_event');
 });
