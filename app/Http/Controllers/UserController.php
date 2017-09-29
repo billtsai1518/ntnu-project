@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classes;
 use App\Record;
 use App\User;
+use App\SortDetail;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,9 +30,11 @@ class UserController extends Controller
     public function user_view($id)
     {
         $user = User::findOrFail($id);
-        $records = Record::where('user_id', $id)->get()->unique('class_id');
+        //$records = Record::where('user_id', $id)->get()->unique('class_id');
+        $records = Record::where('user_id', $id)->get()->reverse();
         $classes = Classes::all();
-        return view('user', ['user' => $user, 'classes' => $classes, 'records' => $records]);
+        $sort_details = SortDetail::all();
+        return view('user', ['user' => $user, 'classes' => $classes, 'records' => $records, 'sort_details' => $sort_details]);
     }
 
     public function setting_view()
