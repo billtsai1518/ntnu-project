@@ -50,6 +50,7 @@ class AuthenticateController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
+            $user->type = $request->type;
             $user->student_id = $request->student_id;
             $user->school = $request->school;
             $user->save();
