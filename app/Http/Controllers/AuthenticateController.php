@@ -31,14 +31,24 @@ class AuthenticateController extends Controller
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
 
-        // all good so add a new Record
-        $record = new Record;
-        $record->class_id = $request->class_id;
-        $record->user_id = User::where('email', $request->email)->first()->id;
-        $record->save();
-        
-        // and then return the token
-        return response()->json(compact('token'));
+        // before adding a new Record, check if class exists or not
+
+        $class_exist_or_not = Classes::where('id', $request->class_id)->first();
+        if(is_null($class_exist_or_not))
+        {
+            return response()->json(['error' => 'class_does_not_exist']);
+        }
+        else
+        {
+            // all good so add a new Record
+            $record = new Record;
+            $record->class_id = $request->class_id;
+            $record->user_id = User::where('email', $request->email)->first()->id;
+            $record->save();
+            
+            // and then return the token
+            return response()->json(compact('token'));
+        }
     }
     
     public function register(Request $request)
