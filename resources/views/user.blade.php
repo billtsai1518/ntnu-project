@@ -49,18 +49,7 @@
                     @foreach ($records as $record)
                         <tr>
                             <th>{{ $loop->iteration }}</th>
-                            <td>
-                                @php ($portfolio_count = 0)
-                                @foreach ($sort_details as $sort_detail)
-                                    @if ($sort_detail->record_id == $record->id)
-                                        @php ($portfolio_count++)
-                                    @endif
-                                    
-                                    @if ($loop->last)
-                                        {{ $portfolio_count }}
-                                    @endif
-                                @endforeach
-                            </td>
+                            <td>{{ $record->sort_details_count }}</td>
                         </tr>
                     @endforeach
                 </tbody>

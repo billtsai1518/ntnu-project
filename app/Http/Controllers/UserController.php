@@ -31,10 +31,9 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         //$records = Record::where('user_id', $id)->get()->unique('class_id');
-        $records = Record::where('user_id', $id)->get()->reverse();
+        $records = Record::where('user_id', $id)->withCount('sort_details')->get()->reverse();
         $classes = Classes::all();
-        $sort_details = SortDetail::all();
-        return view('user', ['user' => $user, 'classes' => $classes, 'records' => $records, 'sort_details' => $sort_details]);
+        return view('user', ['user' => $user, 'classes' => $classes, 'records' => $records]);
     }
 
     public function setting_view()
