@@ -12,4 +12,10 @@ class Record extends Model
     {
         return $this->hasMany('App\SortDetail');
     }
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
 }

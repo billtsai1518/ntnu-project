@@ -14,14 +14,8 @@
             </div>
             <div class="panel-body">
                 <p>學生：
-                    @foreach ($records as $record)
-                        @if ($class->id == $record->class_id)
-                            @foreach ($users as $user)
-                                @if ($record->user_id == $user->id)
-                                    <a href="{{ url('user') }}-{{ $user->id }}">{{ $user->name }}</a>&nbsp;
-                                @endif
-                            @endforeach
-                        @endif
+                    @foreach ($class->records->unique('user_id') as $record)
+                        <a href="{{ url('user') }}-{{ $record->user->id }}">{{ $record->user->name }}</a>&nbsp;
                     @endforeach
                 </p>
             </div>
