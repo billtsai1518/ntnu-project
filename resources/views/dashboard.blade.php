@@ -10,7 +10,7 @@
     @foreach ($classes as $class)
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">{{ $class->name }}<a href="{{ url('classes') }}-{{ $class->id }}"><span style="float: right;" class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></h3>
+                <h3 class="panel-title">{{ $class->name }}</h3>
             </div>
             <div class="panel-body">
                 <p>學生：
@@ -18,6 +18,7 @@
                         <a href="{{ url('user') }}-{{ $record->user->id }}">{{ $record->user->name }}</a>&nbsp;
                     @endforeach
                 </p>
+                <a href="{{ url('classes') }}-{{ $class->id }}" class="btn btn-info" role="button" style="width: 10em; display: block; margin: auto;">班級詳細資料</a>
             </div>
         </div>
     @endforeach

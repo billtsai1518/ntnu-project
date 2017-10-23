@@ -43,6 +43,9 @@ class ClassesController extends Controller
     public function classes_view($id)
     {
         $classes = Classes::findOrFail($id);
+        
+        
+        
         return view('classes', ['classes' => $classes]);
     }
     
