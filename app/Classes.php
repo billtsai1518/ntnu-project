@@ -10,4 +10,9 @@ class Classes extends Model
     {
         return $this->hasMany('App\Record', 'class_id');
     }
+    
+    public function sort_details()
+    {
+        return $this->hasManyThrough('App\SortDetail', 'App\Record', 'class_id', 'record_id');
+    }
 }

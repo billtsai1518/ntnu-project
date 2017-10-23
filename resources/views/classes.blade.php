@@ -39,19 +39,16 @@
             </div>
         </div>
     </div>
-    
-    {{-- Calculate video click count --}}
+
     @php ($mergesort_videoclick_count = 0)
     @php ($quicksort_videoclick_count = 0)
-    @foreach ($classes->records as $record)
-        @foreach ($record->sort_details as $sort_detail)
-            @if ($sort_detail->action_id == 3)
-                @php ($mergesort_videoclick_count++)
-            @endif
-            @if ($sort_detail->action_id == 6)
-                @php ($quicksort_videoclick_count++)
-            @endif
-        @endforeach
+
+    @foreach ($classes->sort_details as $sort_detail)
+        @if ($sort_detail->action_id == 3)
+            @php ($mergesort_videoclick_count++)
+        @elseif ($sort_detail->action_id == 6)
+            @php ($quicksort_videoclick_count++)
+        @endif
     @endforeach
 
     <!-- Chart -->
