@@ -18,6 +18,9 @@
                         <dt>班級</dt>
                         <dd>
                             @foreach ($records->unique('class_id') as $record_unique_class)
+                                @if ($record_unique_class->classes == NULL)
+                                    @continue
+                                @endif
                                 {{ $record_unique_class->classes->name }} &nbsp;
                             @endforeach
                         </dd>
