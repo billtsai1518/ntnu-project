@@ -17,5 +17,10 @@ class Record extends Model
     {
         return $this->belongsTo('App\User');
     }
+    
+    public function classes()
+    {
+        return $this->belongsTo('App\Classes', 'class_id');
+    }
 
 }
