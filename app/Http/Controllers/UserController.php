@@ -30,7 +30,7 @@ class UserController extends Controller
     public function user_view($id)
     {
         $user = User::findOrFail($id);
-        $records = Record::where('user_id', $id)->with('classes')->with('sort_details')->withCount('sort_details')->get()->reverse();
+        $records = Record::where('user_id', $id)->with('classes', 'sort_details')->withCount('sort_details')->get()->reverse();
         return view('user', ['user' => $user, 'records' => $records]);
     }
 
