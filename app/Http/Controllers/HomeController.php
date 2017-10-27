@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $classes = Classes::where('teacher_id', Auth::user()->id)->get();
+        $classes = Classes::where('teacher_id', Auth::user()->id)->with('records.user')->get();
         
         return view('dashboard', ['classes' => $classes]);
     }
