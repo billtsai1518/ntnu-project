@@ -42,9 +42,7 @@ class ClassesController extends Controller
 
     public function classes_view($id)
     {
-        $classes = Classes::findOrFail($id);
-        
-        
+        $classes = Classes::where('id', $id)->with('sort_details')->first();
         
         return view('classes', ['classes' => $classes]);
     }
