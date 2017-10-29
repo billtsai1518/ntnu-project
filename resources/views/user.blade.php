@@ -57,7 +57,6 @@
                                         @continue
                                     @endif
                                     {{ $sort_detail->portfolio->array }}
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                     {{ $sort_detail->portfolio->result }}
                                     <br>
                                 @endforeach
