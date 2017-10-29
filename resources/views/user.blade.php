@@ -52,17 +52,22 @@
                             <th style="text-align: center;">{{ $loop->iteration }}</th>
                             <td style="text-align: center;">{{ $record->sort_details_count }}</td>
                             <td>
+                                @php ($current_time = 0)
                                 @foreach ($record->sort_details as $sort_detail)
                                     @if (is_null($sort_detail->portfolio))
                                         @continue
                                     @elseif (is_null($sort_detail->portfolio->result))
+                                        {{-- corresponding portfolio is NULL --}}
+                                        @php ($current_time = strtotime($sort_detail->time))
                                         @continue
                                     @endif
-                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                    {{ $sort_detail->time }}
+                                    {{ $sort_detail->portfolio->array }}
                                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    {{ $sort_detail->portfolio->array }}: {{ $sort_detail->portfolio->result }}
+                                    {{ $sort_detail->portfolio->result }}&nbsp;
+                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    {{ strtotime($sort_detail->time) - $current_time }}秒
                                     <br>
+                                    @php ($current_time = strtotime($sort_detail->time))
                                 @endforeach
                             </td>
                             <td style="text-align: center;">
