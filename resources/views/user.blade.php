@@ -42,6 +42,7 @@
                     <tr>
                         <th>練習編號</th>
                         <th>Pass作答次數</th>
+                        <th>歷程</th>
                         <th>備註</th>
                     </tr>
                 </thead>
@@ -50,6 +51,17 @@
                         <tr>
                             <th>{{ $loop->iteration }}</th>
                             <td>{{ $record->sort_details_count }}</td>
+                            <td>
+                                @foreach ($record->sort_details as $sort_detail)
+                                    @if (is_null($sort_detail->portfolio))
+                                        @continue
+                                    @endif
+                                    {{ $sort_detail->portfolio->array }}
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    {{ $sort_detail->portfolio->result }}
+                                    <br>
+                                @endforeach
+                            </td>
                             <td>
                                 @foreach ($record->sort_details as $sort_detail)
                                     @if ($sort_detail->action_id == 3 || $sort_detail->action_id == 6)
