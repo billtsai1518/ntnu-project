@@ -55,6 +55,19 @@ hr {
 	margin-right: 1em;
 }
 
+.table>thead>tr>th {
+    text-align: center;
+    border-bottom: 2px solid #e8daef;
+}
+
+.table>tbody>tr>td {
+    border-top: 1px solid #e8daef;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: #faefff;
+}
+
 /*
  * Masthead
  */

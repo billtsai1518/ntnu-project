@@ -49,8 +49,8 @@
                 <tbody>
                     @foreach ($records as $record)
                         <tr>
-                            <th>{{ $loop->iteration }}</th>
-                            <td>{{ $record->sort_details_count }}</td>
+                            <th style="text-align: center;">{{ $loop->iteration }}</th>
+                            <td style="text-align: center;">{{ $record->sort_details_count }}</td>
                             <td>
                                 @foreach ($record->sort_details as $sort_detail)
                                     @if (is_null($sort_detail->portfolio))
@@ -65,7 +65,7 @@
                                     <br>
                                 @endforeach
                             </td>
-                            <td>
+                            <td style="text-align: center;">
                                 @foreach ($record->sort_details as $sort_detail)
                                     @if ($sort_detail->action_id == 3 || $sort_detail->action_id == 6)
                                         有看過教學影片
