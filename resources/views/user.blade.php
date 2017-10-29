@@ -55,9 +55,13 @@
                                 @foreach ($record->sort_details as $sort_detail)
                                     @if (is_null($sort_detail->portfolio))
                                         @continue
+                                    @elseif (is_null($sort_detail->portfolio->result))
+                                        @continue
                                     @endif
-                                    {{ $sort_detail->portfolio->array }}
-                                    {{ $sort_detail->portfolio->result }}
+                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                    {{ $sort_detail->time }}
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    {{ $sort_detail->portfolio->array }}: {{ $sort_detail->portfolio->result }}
                                     <br>
                                 @endforeach
                             </td>
