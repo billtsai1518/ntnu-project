@@ -3,8 +3,17 @@
 @section('title', '首頁 | ')
 
 @section('content')
-<div class="jumbotron" style="text-align: center;">
-	<h1>Puzzort 拼塊兒</h1>
+<div class="jumbotron" style="margin: 50px 0 100px 0;">
+    <div class="row">
+        <div class="col-sm-5">
+            <img src="{{ asset('img/puzzort_logo.png') }}" class="img-responsive" style="margin: auto;">
+        </div>
+        <div class="col-sm-7">
+        	<p style="font-size: 50px; margin-left: 0.6em;">Puzzort 拼塊兒</p>
+            <p>一款前所未有的排序演算法教具，結合了實體教具、Android、OCR、以及教師端網頁管理系統。</p>
+            <p>Puzzort可幫助學生學習Quick Sort和Merge Sort這兩種複雜的排序演算法。</p>
+        </div>
+    </div>
 </div>
 
 <div class="row" style="text-align: center;">
