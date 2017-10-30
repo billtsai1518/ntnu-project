@@ -44,9 +44,9 @@
     @php ($quicksort_videoclick_count = 0)
 
     @foreach ($classes->sort_details as $sort_detail)
-        @if ($sort_detail->action_id == 3)
+        @if ($sort_detail->action_id == 15)
             @php ($mergesort_videoclick_count++)
-        @elseif ($sort_detail->action_id == 6)
+        @elseif ($sort_detail->action_id == 10)
             @php ($quicksort_videoclick_count++)
         @endif
     @endforeach
