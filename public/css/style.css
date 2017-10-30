@@ -60,7 +60,13 @@ hr {
     border-bottom: 2px solid #e8daef;
 }
 
+.table>tbody>tr>th {
+    vertical-align: middle;
+    border-top: 1px solid #e8daef;
+}
+
 .table>tbody>tr>td {
+    vertical-align: middle;
     border-top: 1px solid #e8daef;
 }
 
