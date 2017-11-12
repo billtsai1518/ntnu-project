@@ -116,19 +116,5 @@ class AuthenticateController extends Controller
         
         return response()->json(['detail_id' => $sort_detail->id, 'portfolio_id' => $portfolio->id]);
     }
-
-    public function details()
-    {
-        return response()->json(SortDetail::all());
-    }
-    
-    public function portfolios()
-    {
-        return response()->json(Portfolio::all());
-    }
-    
-    public function records()
-    {
-        return response()->json(Record::all());
-    }
 }
+

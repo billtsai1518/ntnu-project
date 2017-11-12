@@ -25,8 +25,4 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('download', 'AuthenticateController@download');
     Route::post('action_event', 'AuthenticateController@action_event');
     Route::post('portfolio_event', 'AuthenticateController@portfolio_event');
-
-    Route::get('details', 'AuthenticateController@details');
-    Route::get('portfolios', 'AuthenticateController@portfolios');
-    Route::get('records', 'AuthenticateController@records');
 });
